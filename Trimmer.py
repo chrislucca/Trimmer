@@ -294,7 +294,7 @@ class RemoveComments(sublime_plugin.TextCommand):
         has_matches = False
 
         re_single_line_comment = re.compile(r"//.*$", re.MULTILINE)
-        re_hash_comment = re.compile("#[^!].*$", re.MULTILINE)
+        re_hash_comment = re.compile("#(?!__)[^!].*$", re.MULTILINE)
         re_html_comment = re.compile("<!--.*?-->", re.DOTALL)
         re_block_comment = re.compile(r"/\*.*?\*/", re.DOTALL)
         re_ini_comment = re.compile(r"^(?:\s+)?;.*$", re.MULTILINE)
